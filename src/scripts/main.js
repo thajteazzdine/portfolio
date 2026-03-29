@@ -25,7 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const sections = document.querySelectorAll("section[id], footer[id]");
-  const navLinks = document.querySelectorAll("nav a");
+  const navLinks = document.querySelectorAll(".nav-links .nav-link");
+  const siteNav = document.querySelector(".site-nav");
+  const navToggle = document.querySelector(".nav-toggle");
+
+  if (siteNav && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
   const updateActiveNav = () => {
     let current = "";
