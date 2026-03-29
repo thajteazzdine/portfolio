@@ -1,6 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/my_logo_no_bk.png';
+
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+	? import.meta.env.BASE_URL
+	: `${import.meta.env.BASE_URL}/`;
 ---
 
 <header>
@@ -15,7 +19,7 @@ import logo from '../assets/my_logo_no_bk.png';
 			aria-expanded="false"
 			aria-controls="primary-nav-links"
 		>
-			<img src={`${import.meta.env.BASE_URL}menu-bar.png`} alt="" class="nav-toggle-icon" />
+			<img src={`${basePath}menu-bar.png`} alt="" class="nav-toggle-icon" />
 		</button>
 		<div id="primary-nav-links" class="nav-links">
 			<a href="#about" class="nav-link active">About</a>
