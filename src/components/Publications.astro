@@ -1,0 +1,33 @@
+---
+import { publications } from "../data/publications";
+---
+
+<section id="publications" class="fade-in-section">
+  <h2 class="section-title">Publications</h2>
+
+  <div class="publications-list">
+    {publications.map((pub) => (
+      <article class="publication-item">
+        <p class="pub-authors">{pub.authors}</p>
+        <h3 class="pub-title">{pub.title}</h3>
+        <p class="pub-meta">
+          <em>{pub.booktitle}</em>
+          {pub.pages && `, pp. ${pub.pages}`}
+          {pub.year && `, ${pub.year}`}
+        </p>
+        {pub.doi && (
+          <p class="pub-doi">
+            DOI: <code>{pub.doi}</code>
+          </p>
+        )}
+        {pub.url && (
+          <p class="pub-url">
+            <a href={pub.url} target="_blank" rel="noreferrer">
+              View on HAL
+            </a>
+          </p>
+        )}
+      </article>
+    ))}
+  </div>
+</section>

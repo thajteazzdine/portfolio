@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/my_logo_no_bk.png';
+---
+
+<header>
+	<nav>
+		<a href="#about" class="nav-logo-link">
+			<Image src={logo} alt="Logo" class="nav-logo" width="32" height="32" />
+		</a>
+		<a href="#about" class="nav-link active">About</a>
+		<a href="#experience" class="nav-link">Experience</a>
+		<a href="#education" class="nav-link">Education</a>
+		<a href="#publications" class="nav-link">Publications</a>
+		<a href="#skills" class="nav-link">Skills</a>
+		<a href="#certifications" class="nav-link">Certifications</a>
+		<a href="#teaching" class="nav-link">Teaching</a>
+		<a href="#contact" class="nav-link">Contact</a>
+	</nav>
+</header>
